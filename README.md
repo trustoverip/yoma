@@ -1,6 +1,6 @@
-# Terms for &lt;your scope&gt;
+# Terms for Yoma Governance Framework Terms
 
-This is where to collaborate on terminology that &lt;your scope&gt; wants to formalize -- to build, version, and release glossaries, to reference from whitepapers, and so forth.
+This is where to collaborate on terminology that Yoma Governance Framework Task Force wants to formalize -- to build, version, and release glossaries, to reference from whitepapers, and so forth.
 
 ### Next Steps (after creating the repo)
 
