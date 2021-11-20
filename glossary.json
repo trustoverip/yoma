@@ -1,5 +1,5 @@
 {
-    "title": "Yoma Glossary",
+    "frame": "https://raw.githubusercontent.com/trustoverip/yoma/main/.glossary-template.html",
     "sources": [
         { "wiki": "git@github.com:trustoverip/yoma.git" }
     ]
