@@ -20,15 +20,20 @@ header {
     background-image: url(https://raw.githubusercontent.com/trustoverip/ctwg/main/logo.png);
     background-repeat: no-repeat;
 }
-
 main {
-    padding: 16px;
+    padding: 16px 24px;
     color: #444;
+}
+
+@media screen and (min-width: 640px) {
+  main {
+      padding: 24px 64px;
+  }
 }
 
 dt {
     margin-top: 1.4em;
-    color: #3061a8;
+    color: #02005f;
     font-size: 125%;
     font-family: Verdana, sans-serif;
 }
@@ -41,6 +46,7 @@ dt.letter {
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 2.2em;
+    color: #666;
 }
 
 nav {
@@ -74,10 +80,6 @@ a {
     text-decoration: none;
 }
 
-dt > a {
-    color: #02005f;
-}
-
 a:hover {
     border-bottom: solid 1px #3061a8;
 }
@@ -101,57 +103,117 @@ p.meta {
     margin-top: -0.9em;
 }
 
+._slf {
+    float: left;
+    padding-right: 4px;
+    padding-top: 4px;
+    margin-left: -20px;
+    cursor: pointer;
+    width:16px;
+    height:16px;
+    display: none;
+}
+
+dt:not(.letter):hover > ._slf {
+    display: inline;
+}
+
+._xl {
+    padding-right: 4px;
+    display: none;
+    cursor: pointer;
+    width:16px;
+    height:16px;
+}
+
+dt:not(.letter):hover > ._xl {
+  display: inline;
+}
   </style>
+  <script>
+var getAbsoluteUrl = (function() {
+  var a;
+  return function(url) {
+      if (!a)
+        a = document.createElement('a');
+      a.href = url;
+      return a.href;
+  };
+})();
+
+function copyUrl(url) {
+  x = getAbsoluteUrl(url);
+  navigator.clipboard.writeText(x);
+}
+
+function goto(url) {
+  window.location = url;
+}
+  </script>
 </head>
 <body>
+
+<svg style="display:none">
+  <symbol id="_slf" viewBox="0 0 16 16">
+    <path style="fill:#aaa" fill-rule="evenodd"
+          d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"/>
+  </symbol>
+  <symbol id="_xl" viewBox="0 -256 1850 1850">
+    <g transform="matrix(1,0,0,-1,30.372881,1426.9492)">
+      <path style="fill:#aaa"
+            d="M 1408,608 V 288 Q 1408,169 1323.5,84.5 1239,0 1120,0 H 288 Q 169,0 84.5,84.5 0,169 0,288 v 832 Q 0,1239 84.5,1323.5 169,1408 288,1408 h 704 q 14,0 23,-9 9,-9 9,-23 v -64 q 0,-14 -9,-23 -9,-9 -23,-9 H 288 q -66,0 -113,-47 -47,-47 -47,-113 V 288 q 0,-66 47,-113 47,-47 113,-47 h 832 q 66,0 113,47 47,47 47,113 v 320 q 0,14 9,23 9,9 23,9 h 64 q 14,0 23,-9 9,-9 9,-23 z m 384,864 V 960 q 0,-26 -19,-45 -19,-19 -45,-19 -26,0 -45,19 L 1507,1091 855,439 q -10,-10 -23,-10 -13,0 -23,10 L 695,553 q -10,10 -10,23 0,13 10,23 l 652,652 -176,176 q -19,19 -19,45 0,26 19,45 19,19 45,19 h 512 q 26,0 45,-19 19,-19 19,-45 z" />
+    </g>
+  </symbol>
+</svg>
+
 <header>Yoma Glossary</header>
 <nav>[ <a href="#A">A</a> B C <a href="#D">D</a> <a href="#E">E</a> F G H <a href="#I">I</a> J K L M N <a href="#O">O</a> P Q R S T U V W X <a href="#Y">Y</a> Z ]</nav>
 
 <main>
-<dl>
+<dl id="glossary_content">
 <dt id="A" class="letter">A</td>
-<dt id="ai"><a href="#ai">AI</a> <span class="tag">#yoma</span></dt>
+<dt id="ai"><svg class="_slf" onclick="copyUrl('#ai')"><use href="#_slf"/></svg>AI <svg class="_xl" onclick="goto('https://github.com/trustoverip/yoma/wiki//ai')"><use href="#_xl"/></svg><span class="tag">#yoma</span></dt>
 <dd><p>Synonym for <a href="#artificial-intelligence-ai" title="A non-human actor which executes machine-readable rules or performs transactions in order to achieve objectives of a party for which it is an agent.">artificial intelligence</a>.</p>
 <p class="meta">version 5, commit 037a4f2, created 2021-10-30, last modified 2021-11-08, contributors Daniel Hardman - Nicky Hickman</p>
 </dd>
 
-<dt id="artificial-intelligence-ai"><a href="#artificial-intelligence-ai">artificial intelligence</a> <span class="tag">#yoma</span></dt>
+<dt id="artificial-intelligence-ai"><svg class="_slf" onclick="copyUrl('#artificial-intelligence-ai')"><use href="#_slf"/></svg>artificial intelligence <svg class="_xl" onclick="goto('https://github.com/trustoverip/yoma/wiki//artificial-intelligence-ai')"><use href="#_xl"/></svg><span class="tag">#yoma</span></dt>
 <dd><p>A non-human <a href="https://trustoverip.github.io/essiflab/glossary.html#actor">actor</a> which executes machine-readable rules or performs <a href="https://trustoverip.github.io/essiflab/glossary.html#transaction">transactions</a> in order to achieve <a href="https://trustoverip.github.io/essiflab/glossary.html#objective">objectives</a> of a <a href="https://trustoverip.github.io/essiflab/glossary.html#party">party</a> for which it is an <a href="https://trustoverip.github.io/essiflab/glossary.html#agent">agent</a>. </p>
 <p class="meta">version 5, commit 037a4f2, created 2021-10-30, last modified 2021-11-08, contributors Daniel Hardman - Nicky Hickman</p>
 </dd>
 
 <dt id="D" class="letter">D</td>
-<dt id="digital-cv"><a href="#digital-cv">digital CV</a> <span class="tag">#yoma</span><span class="tag">#yoma</span></dt>
+<dt id="digital-cv"><svg class="_slf" onclick="copyUrl('#digital-cv')"><use href="#_slf"/></svg>digital CV <svg class="_xl" onclick="goto('https://github.com/trustoverip/yoma/wiki//digital-cv')"><use href="#_xl"/></svg><span class="tag">#yoma</span><span class="tag">#yoma</span></dt>
 <dd><p>The <a href="https://github.com/trustoverip/essiflab-terms/blob/df781941398ce391822d74fba4e49b966ed8e366/docs/terms/digital-data.md">digital data</a> which together describes a Yoma Member’s work experience, skills, training and educational qualifications.  The Digital CV contains assertions, attributes, credentials and verifiable credentials which can be wholly or partially presented to a 3rd party inside or outside the Yoma community.  The verifiable credentials can be cryptographically verified using the Yoma platform.</p>
 <p class="meta">version 1, commit e6de256, created 2021-10-30, contributors Nicky Hickman</p>
 </dd>
 
-<dt id="donor"><a href="#donor">donor</a> <span class="tag">#yoma</span><span class="tag">#yoma</span></dt>
+<dt id="donor"><svg class="_slf" onclick="copyUrl('#donor')"><use href="#_slf"/></svg>donor <svg class="_xl" onclick="goto('https://github.com/trustoverip/yoma/wiki//donor')"><use href="#_xl"/></svg><span class="tag">#yoma</span><span class="tag">#yoma</span></dt>
 <dd><p>A Yoma role fufilled by any Yoma member who 1) has the <a href="https://github.com/trustoverip/essiflab-terms/blob/df781941398ce391822d74fba4e49b966ed8e366/docs/terms/objective.md">objective</a> of providing resources (e.g. money) to the Yoma community, 2) does not directly transact on the Yoma platform, and 3) may not receive any direct financial reward in exchange for their donation.</p>
 <p class="meta">version 1, commit c0ccb4d, created 2021-10-30, contributors Nicky Hickman</p>
 </dd>
 
 <dt id="E" class="letter">E</td>
-<dt id="education-opportunity"><a href="#education-opportunity">education opportunity</a> <span class="tag">#yoma</span><span class="tag">#yoma</span></dt>
+<dt id="education-opportunity"><svg class="_slf" onclick="copyUrl('#education-opportunity')"><use href="#_slf"/></svg>education opportunity <svg class="_xl" onclick="goto('https://github.com/trustoverip/yoma/wiki//education-opportunity')"><use href="#_xl"/></svg><span class="tag">#yoma</span><span class="tag">#yoma</span></dt>
 
-<dt id="employment-opportunity"><a href="#employment-opportunity">employment opportunity</a> <span class="tag">#yoma</span><span class="tag">#yoma</span></dt>
+<dt id="employment-opportunity"><svg class="_slf" onclick="copyUrl('#employment-opportunity')"><use href="#_slf"/></svg>employment opportunity <svg class="_xl" onclick="goto('https://github.com/trustoverip/yoma/wiki//employment-opportunity')"><use href="#_xl"/></svg><span class="tag">#yoma</span><span class="tag">#yoma</span></dt>
 
 <dt id="I" class="letter">I</td>
-<dt id="incentive-provider"><a href="#incentive-provider">incentive provider</a> <span class="tag">#yoma</span></dt>
+<dt id="incentive-provider"><svg class="_slf" onclick="copyUrl('#incentive-provider')"><use href="#_slf"/></svg>incentive provider <svg class="_xl" onclick="goto('https://github.com/trustoverip/yoma/wiki//incentive-provider')"><use href="#_xl"/></svg><span class="tag">#yoma</span></dt>
 <dd><p>An Organisation or Individual providing economic value in the form of money, services or digital assets which can be exchanged with other Entities in the Yoma Ecosystem</p>
 <p class="meta">version 1, commit 0da5eea, created 2021-07-05, contributors Daniel Hardman</p>
 </dd>
 
 <dt id="O" class="letter">O</td>
-<dt id="opportunity"><a href="#opportunity">opportunity</a> <span class="tag">#yoma</span><span class="tag">#yoma</span></dt>
+<dt id="opportunity"><svg class="_slf" onclick="copyUrl('#opportunity')"><use href="#_slf"/></svg>opportunity <svg class="_xl" onclick="goto('https://github.com/trustoverip/yoma/wiki//opportunity')"><use href="#_xl"/></svg><span class="tag">#yoma</span><span class="tag">#yoma</span></dt>
 
 <dt id="Y" class="letter">Y</td>
-<dt id="yoma-ecosystem-governance-authority"><a href="#yoma-ecosystem-governance-authority">Yoma ecosystem governance authority</a> <span class="tag">#yoma</span></dt>
+<dt id="yoma-ecosystem-governance-authority"><svg class="_slf" onclick="copyUrl('#yoma-ecosystem-governance-authority')"><use href="#_slf"/></svg>Yoma ecosystem governance authority <svg class="_xl" onclick="goto('https://github.com/trustoverip/yoma/wiki//yoma-ecosystem-governance-authority')"><use href="#_xl"/></svg><span class="tag">#yoma</span></dt>
 <dd><p>The Organisation that maintains, administers and enforces the Ecosystem Governance Framework</p>
 <p class="meta">version 1, commit befdb35, created 2021-07-05, contributors Daniel Hardman</p>
 </dd>
 
-<dt id="yoma-infrastructure"><a href="#yoma-infrastructure">Yoma infrastructure</a> <span class="tag">#yoma</span></dt>
+<dt id="yoma-infrastructure"><svg class="_slf" onclick="copyUrl('#yoma-infrastructure')"><use href="#_slf"/></svg>Yoma infrastructure <svg class="_xl" onclick="goto('https://github.com/trustoverip/yoma/wiki//yoma-infrastructure')"><use href="#_xl"/></svg><span class="tag">#yoma</span></dt>
 <dd><p>The set of Things including hardware and software components that are used by other Entities in the ecosystem to interact, the <a href="#yoma-ecosystem-governance-authority" title="The Organisation that maintains, administers and enforces the Ecosystem Governance Framework">Yoma Ecosystem Governance Authority</a>, the Yoma Verified Registry, and the Yoma Governance Framework. </p>
 <p class="meta">version 3, commit d8a0b47, created 2021-07-05, last modified 2021-07-05, contributors Daniel Hardman</p>
 </dd>
